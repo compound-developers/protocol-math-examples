@@ -41,7 +41,7 @@ const main = async () => {
   // ETH Mantissa = 1 * 10 ^ 18 (ETH has 18 decimal places)
   // Blocks Per Day = 4 * 60 * 24 (based on 4 blocks occurring every minute)
 
-  // (((Rate / ETH Mantissa * Blocks Per Day + 1 ^ Days Per Year - 1)) - 1) x 100
+  // APY = ((((Rate / ETH Mantissa * Blocks Per Day + 1) ^ Days Per Year - 1)) - 1) x 100
 
   let cToken = new web3.eth.Contract(cEthAbi, cETH);
   let supplyRatePerBlock = await cToken.methods.supplyRatePerBlock().call();
